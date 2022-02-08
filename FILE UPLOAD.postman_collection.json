@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "e3f2e495-5ad8-477a-9c6f-ce26b6d6ff8d",
+		"name": "FILE UPLOAD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOADING HOME PAGE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cgi-lib.berkeley.edu/ex/fup.html",
+					"protocol": "https",
+					"host": [
+						"cgi-lib",
+						"berkeley",
+						"edu"
+					],
+					"path": [
+						"ex",
+						"fup.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPLOAD FILE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/IQT/Desktop/Todo.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cgi-lib.berkeley.edu/ex/fup.cgi",
+					"protocol": "https",
+					"host": [
+						"cgi-lib",
+						"berkeley",
+						"edu"
+					],
+					"path": [
+						"ex",
+						"fup.cgi"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	]
+}
